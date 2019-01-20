@@ -41,7 +41,6 @@ RSpec.describe User, type: :model do
 
   it "パスワードが６桁の時" do
     user.password = "a" * 6
-    binding.pry
     user.password_confirmation = "a" * 6
     expect(user).to be_valid
   end
