@@ -18,7 +18,7 @@ RSpec.describe "Users_signup", type: :system do
       fill_in "Name", with: user.name
       fill_in "Email", with: user.email
       fill_in "Password", with: user.password
-      fill_in "Confirmation", with: user.password_confirmation
+      fill_in "Password confirmation", with: user.password_confirmation
       click_button "Create my account"
     }.to change(User, :count).to(1)
   end
@@ -29,7 +29,7 @@ RSpec.describe "Users_signup", type: :system do
     fill_in "Name", with: " "
     fill_in "Email", with: " "
     fill_in "Password", with: " "
-    fill_in "Confirmation", with: " "
+    fill_in "Password confirmation", with: " "
     click_button "Create my account"
 
     expect(page).to have_content("can't be blank")
