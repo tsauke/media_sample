@@ -29,4 +29,21 @@ RSpec.describe "Users_login", type: :system do
       end
     end
   end
+
+  context 'invalid information' do
+    before do
+      visit login_path
+    end
+    it 'login with invalid information' do
+      expect(page).to have_selector 'h1', text: 'Log in'
+      fill_in 'Email', with: ' '
+      fill_in 'Password', with: ' '
+      click_button 'Log in'
+      expect(page).to have_selector 'h1', text: 'Log in'
+      expect(page).to have_selector '.alert'
+      visit root_path
+      expect(page).to have_no_selector '.alert'
+    end
+  end
+
 end
