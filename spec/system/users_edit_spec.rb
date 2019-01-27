@@ -11,12 +11,12 @@ RSpec. describe 'UserEdit', type: :system do
         visit edit_user_path(user)
       end
       scenario 'return users edit' do
-        fill_in 'Name',         with: ''
-        fill_in 'Email',        with: 'foo@invalid'
-        fill_in 'Password',     with: 'foo'
-        fill_in 'Password confirmation', with: 'foo'
-        click_button 'Save changes'
-        expect(page).to have_selector 'h1', text: 'Update your profile'
+        fill_in '名前',         with: ''
+        fill_in 'メール',        with: 'foo@invalid'
+        fill_in 'パスワード',     with: 'foo'
+        fill_in 'パスワード再入力', with: 'foo'
+        click_button '更新する'
+        expect(page).to have_selector 'h1', text: 'プロフィールの更新'
       end
     end
     context 'when successful edit with friendly forwarding' do

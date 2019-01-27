@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      user:
+    attributes:
+      user:
+        name: 名前
+        email: メール
+        password: パスワード
+        created_at: パスワード再入力
+        updated_at: パスワード再入力
+        remember_digest: パスワード再入力
+  flash:
+    new: 作成しました！
+    updated: 更新しました！
+    failed: 失敗しました！
+    destroy: 削除しました！
+    login: ログインしました！
+    logout: ログアウトしました！
+    limited_access: 不正な侵入です！！
+    tag_follow: タグをフォローしました！
+    tag_not_follow: タグをフォローできませんでした。
+    tag_remove_follow: タグのフォローを解除しました！

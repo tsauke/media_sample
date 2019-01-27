@@ -6,7 +6,7 @@ RSpec.describe "Users_signup", type: :system do
 
   it "Signupページにページ遷移できるか" do
     visit root_path
-    click_on "Sign up"
+    click_on "登録する"
 
     expect(page).to have_content("Sign up")
   end
@@ -15,24 +15,24 @@ RSpec.describe "Users_signup", type: :system do
     visit new_user_path
 
     expect {
-      fill_in "Name", with: user.name
-      fill_in "Email", with: user.email
-      fill_in "Password", with: user.password
-      fill_in "Password confirmation", with: user.password_confirmation
-      click_button "Create my account"
+      fill_in "名前", with: user.name
+      fill_in "メール", with: user.email
+      fill_in "パスワード", with: user.password
+      fill_in "パスワード再入力", with: user.password_confirmation
+      click_button "登録する"
     }.to change(User, :count).to(1)
   end
 
   it "エラーメッセージが正しく表示されること" do
     visit new_user_path
 
-    fill_in "Name", with: " "
-    fill_in "Email", with: " "
-    fill_in "Password", with: " "
-    fill_in "Password confirmation", with: " "
-    click_button "Create my account"
+    fill_in "名前", with: " "
+    fill_in "メール", with: " "
+    fill_in "パスワード", with: " "
+    fill_in "パスワード再入力", with: " "
+    click_button "登録する"
 
-    expect(page).to have_content("can't be blank")
+    expect(page).to have_content("The form contains 5 error.")
 
   end
 end
