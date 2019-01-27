@@ -6,7 +6,7 @@ RSpec.describe "Static_pages_system", type: :system do
       visit root_path
       click_link "Home"
 
-      expect(page).to have_content("Welcome to the Sample App")
+      expect(page).to have_content("Connect")
     end
 
     scenario "aboutへページ遷移できるか" do
@@ -32,7 +32,7 @@ RSpec.describe "Static_pages_system", type: :system do
 
     scenario "Sgin upへページ遷移できるか" do
       visit root_path
-      click_on "Sign up now!"
+      click_on "登録する"
 
       expect(page).to have_content("Sign up")
     end

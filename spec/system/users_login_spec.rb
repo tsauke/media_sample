@@ -14,7 +14,7 @@ RSpec.describe "Users_login", type: :system do
         fill_in 'Email',    with: user.email
         fill_in 'Password', with: user.password
         # ボタンをクリックする
-        click_button 'Log in'
+        click_button 'ログイン'
         # ログインに成功したことを検証
         expect(current_path).to eq user_path(user)
         expect(page).to have_link nil, href: login_path, count: 0
@@ -38,7 +38,7 @@ RSpec.describe "Users_login", type: :system do
       expect(page).to have_selector 'h1', text: 'Log in'
       fill_in 'Email', with: ' '
       fill_in 'Password', with: ' '
-      click_button 'Log in'
+      click_button 'ログイン'
       expect(page).to have_selector 'h1', text: 'Log in'
       expect(page).to have_selector '.alert'
       visit root_path

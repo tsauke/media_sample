@@ -3,7 +3,7 @@
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #e005ea;
+$gray-medium-light: #000000;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -13,8 +13,33 @@ $gray-medium-light: #e005ea;
 
 /* universal */
 
+.btn-primary {
+  background: #FFBC61; //ボタンの背景色
+  color: #000000; //ボタンのテキストの色
+}
+
+.btn-primary:hover, .btn-primary:focus,
+.btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover, .btn-primary:active.focus,
+.btn-primary.active, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.active.focus,
+.open > .dropdown-toggle.btn-primary,
+.open > .dropdown-toggle.btn-primary:hover,
+.open > .dropdown-toggle.btn-primary:focus,
+.open > .dropdown-toggle.btn-primary.focus,
+.btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled.focus, .btn-primary[disabled].focus, fieldset[disabled] .btn-primary.focus {
+  background: #F68655; //ボタンの上にポインタを持ってきたり、クリックしたりした時の背景色
+  color: #000000; //ボタンの上にポインタを持ってきたり、クリックしたりした時のテキストの色
+}
+
+.btn-primary.outline {
+  border: 3px solid 好きな色; //アウトラインのみのボタンの線の色
+  color: 好きな色; //アウトラインのみのボタンのテキストの色
+}
+
 body {
   padding-top: 60px;
+  background-color: #FFF4E0;
 }
 
 section {
@@ -27,6 +52,7 @@ textarea {
 
 .center {
   text-align: center;
+  background-color: #FFF4E0;
   h1 {
     margin-bottom: 10px;
   }
@@ -66,7 +92,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #ff0931;
+  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;

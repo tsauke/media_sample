@@ -10,7 +10,6 @@ RSpec.describe User, type: :model do
 
   it "名前が無効" do
     user.email = " "
-
     expect(user).to be_invalid
   end
 
@@ -50,8 +49,4 @@ RSpec.describe User, type: :model do
     user.password_confirmation = "a" * 5
     expect(user).to be_invalid
   end
-
-
-
-
 end
